@@ -1,0 +1,400 @@
+
+  {% extends 'base.html' %}
+  {% load static %}
+  {% block body %}
+
+  <main id="main">
+
+    <!-- ======= Hero Slider Section ======= -->
+    <section id="hero-slider" class="hero-slider">
+      <div class="container-md" data-aos="fade-in">
+        <div class="row">
+          <div class="col-12">
+            <div class="swiper sliderFeaturedPosts">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a href="/singlepost/{{tc1.blog_id}}" class="img-bg d-flex align-items-end" style="background-image: url('static/assets/img/mars.jpg');">
+                    <div class="img-bg-inner">
+                      <h2>{{tc1.title}}</h2>
+                      <p>{{tc1.blog_desc}}</p>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="swiper-slide">
+                  <a href="/singlepost/{{t1.blog_id}}" class="img-bg d-flex align-items-end" style="background-image: url('static/assets/img/indplace.jpg');">
+                    <div class="img-bg-inner">
+                      <h2>{{t1.title}}</h2>
+                      <p>{{t1.blog_desc}}</p>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="swiper-slide">
+                  <a href="/singlepost/{{c5.blog_id}}" class="img-bg d-flex align-items-end" style="background-image: url('static/assets/img/culture.jpg');">
+                    <div class="img-bg-inner">
+                      <h2>{{c5.title}}</h2>
+                      <p>{{c5.blog_desc}}</p>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="swiper-slide">
+                  <a href="/singlepost/{{l2.blog_id}}" class="img-bg d-flex align-items-end" style="background-image: url('static/assets/img/beuty.jpg');">
+                    <div class="img-bg-inner">
+                      <h2>9 {{l2.title}}</h2>
+                      <p>{{l2.blog_desc}}</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="custom-swiper-button-next">
+                <span class="bi-chevron-right"></span>
+              </div>
+              <div class="custom-swiper-button-prev">
+                <span class="bi-chevron-left"></span>
+              </div>
+
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Hero Slider Section -->
+
+    <section id="posts" class="posts">
+      <div class="container" data-aos="fade-up">
+        <div class="row g-5">
+          <div class="col-lg-4">
+            <div class="post-entry-1 lg">
+              <a href="/singlepost/{{l2.blog_id}}"><img src="/media/{{l2.blog_img}}" alt="" class="img-fluid"></a>
+              <div class="post-meta"><span class="date">{{l2.cat}}</span> <span class="mx-1">&bullet;</span> <span>{{l2.date}}</span></div>
+              <h2><a href="/singlepost/{{l2.blog_id}}">{{l2.title}}</a></h2>
+              <p class="mb-4 d-block">{{l2.blog_desc}}</p>
+
+              <div class="d-flex align-items-center author">
+                <div class="photo"><img src="static/assets/img/person-1.jpg" alt="" class="img-fluid"></div>
+                <div class="name">
+                  <h3 class="m-0 p-0">{{l2.author}}</h3>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="post-entry-1 lg">
+              <a href="/singlepost/{{tc1.blog_id}}"><img src="/media/{{tc1.blog_img}}" alt="" class="img-fluid "style="width: 391px;height: 289px;"></a>
+              <div class="post-meta"><span class="date">{{tc1.cat}}</span> <span class="mx-1">&bullet;</span> <span>{{tc1.date}}</span></div>
+              <h2><a href="/singlepost/{{tc1.blog_id}}">{{tc1.title}}</a></h2>
+              <p class="mb-4 d-block">{{tc1.blog_desc}}</p>
+
+              <div class="d-flex align-items-center author">
+                <div class="photo"><img src="static/assets/img/person-1.jpg" alt="" class="img-fluid"></div>
+                <div class="name">
+                  <h3 class="m-0 p-0">{{tc1.author}}</h3>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-8">
+            <div class="row g-5">
+              <div class="col-lg-4 border-start custom-border">
+                <div class="post-entry-1">
+                  <a href="/singlepost/{{b1.blog_id}}"><img src="/media/{{b1.blog_img}}" alt="" class="img-fluid"></a>
+                  <div class="post-meta"><span class="date">{{b1.cat}}</span> <span class="mx-1">&bullet;</span> <span>{{b1.date}}</span></div>
+                  <h2><a href="/singlepost/{{b1.blog_id}}">{{b1.title}}</a></h2>
+                </div>
+                <hr>
+                <div class="post-entry-1">
+                  <a href="/singlepost/{{l1.blog_id}}"><img src="/media/{{l1.blog_img}}" alt="" class="img-fluid"></a>
+                  <div class="post-meta"><span class="date">{{l1.cat}}</span> <span class="mx-1">&bullet;</span> <span>{{l1.date}}</span></div>
+                  <h2><a href="/singlepost/{{l1.blog_id}}">{{l1.title}}</a></h2>
+                </div>
+                <hr>
+                <div class="post-entry-1">
+                  <a href="/singlepost/{{t1.blog_id}}"><img src="/media/{{t1.blog_img}}" alt="" class="img-fluid"></a>
+                  <div class="post-meta"><span class="date">{{t1.cat}}</span> <span class="mx-1">&bullet;</span> <span>{{t1.date}}</span></div>
+                  <h2><a href="/singlepost/{{t1.blog_id}}">{{t1.title}}</a></h2>
+                </div>
+                <hr>
+                
+              </div>
+              <div class="col-lg-4 border-start custom-border">
+                <div class="post-entry-1">
+                  <a href="/singlepost/{{tc1.blog_id}}"><img src="/media/{{tc1.blog_img}}" alt="" class="img-fluid"></a>
+                  <div class="post-meta"><span class="date">{{tc1.cat}}</span> <span class="mx-1">&bullet;</span> <span>{{tc1.date}}</span></div>
+                  <h2><a href="/singlepost/{{tc1.blog_id}}">{{tc1.title}}</a></h2>
+                </div>
+                <hr>
+                <div class="post-entry-1">
+                  <a href="/singlepost/{{b3.blog_id}}"><img src="/media/{{b3.blog_img}}" alt="" class="img-fluid"></a>
+                  <div class="post-meta"><span class="date">{{b3.cat}}</span> <span class="mx-1">&bullet;</span> <span>{{b3.date}}</span></div>
+                  <h2><a href="/singlepost/{{b3.blog_id}}">{{b3.title}}</a></h2>
+                </div>
+                <hr>
+                <div class="post-entry-1">
+                  <a href="/singlepost/{{t2.blog_id}}"><img src="/media/{{t2.blog_img}}" alt="" class="img-fluid"></a>
+                  <div class="post-meta"><span class="date">{{t2.cat}}</span> <span class="mx-1">&bullet;</span> <span>{{t2.date}}</span></div>
+                  <h2><a href="/singlepost/{{t2.blog_id}}">{{t2.title}}</a></h2>
+                </div>
+                <hr>
+                
+              </div>
+
+              <!-- Trending Section -->
+              <div class="col-lg-4">
+
+                <div class="trending">
+                  <h3>Trending</h3>
+                  <ul class="trending-post">
+                    {% for post in trending %}
+                    <div class="post-entry-1 border-bottom" style="margin-left: 20px; margin-right:10px;">
+                      <div class="post-meta"><span class="date">{{post.cat}}</span> <span class="mx-1">&bullet;</span> <span>{{post.date}}</span></div>
+                      <h2 class="mb-2"><a href="single-post.html">{{post.title}}</a></h2>
+                      <span class="author mb-3 d-block">{{post.author}}</span>
+                    </div>
+                    {% endfor %}
+                  </ul>
+                </div>
+
+              </div> <!-- End Trending Section -->
+            </div>
+          </div>
+
+        </div> <!-- End .row -->
+      </div>
+    </section> <!-- End Post Grid Section -->
+
+    <!-- ======= Culture Category Section ======= -->
+    <section class="category-section">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header d-flex justify-content-between align-items-center mb-5">
+          <h2>Culture</h2>
+          <div><a href="/category/6" class="more">See All Culture</a></div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-9">
+
+            <div class="d-lg-flex post-entry-2">
+              <a href="/singlepost/{{c2.blog_id}}" class="me-4 thumbnail mb-4 mb-lg-0 d-inline-block">
+                <img src="/media/{{c2.blog_img}}" alt="" class="img-fluid">
+              </a>
+              <div>
+                <div class="post-meta"><span class="date">{{c2.cat}}</span> <span class="mx-1">&bullet;</span> <span>{{c2.date}}</span></div>
+                <h3><a href="/singlepost/{{c2.blog_id}}">{{c2.title}}</a></h3>
+                <p>{{c2.blog_desc}}</p>
+                <div class="d-flex align-items-center author">
+                  <div class="photo"><img src="static/assets/img/person-2.jpg" alt="" class="img-fluid"></div>
+                  <div class="name">
+                    <h3 class="m-0 p-0">{{c2.author}}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="post-entry-1 border-bottom">
+                  <a href="/singlepost/{{c1.blog_id}}"><img src="/media/{{c1.blog_img}}" alt="" class="img-fluid"></a>
+                  <div class="post-meta"><span class="date">{{c1.cat}}</span> <span class="mx-1">&bullet;</span> <span>{{c1.date}}</span></div>
+                  <h2 class="mb-2"><a href="/singlepost/{{c1.blog_id}}">{{c1.title}}</a></h2>
+                  <span class="author mb-3 d-block">{{c1.author}}</span>
+                  <p class="mb-4 d-block">{{c1.blog_desc}}</p>
+                </div>
+
+                <div class="post-entry-1">
+                  <div class="post-meta"><span class="date">{{c5.cat}}</span> <span class="mx-1">&bullet;</span> <span>{{c5.date}}</span></div>
+                  <h2 class="mb-2"><a href="/singlepost/{{c5.blog_id}}">{{c5.title}}</a></h2>
+                  <span class="author mb-3 d-block">{{c5.author}}</span>
+                </div>
+              </div>
+              <div class="col-lg-8">
+                <div class="post-entry-1">
+                  <a href="/singlepost/{{c3.blog_id}}"><img src="/media/{{c3.blog_img}}" alt=""class="img-fluid"style="width:624px;height: 395px;"></a>
+                  <div class="post-meta"><span class="date">Culture</span> <span class="mx-1">&bullet;</span> <span>{{date}}</span></div>
+                  <h2 class="mb-2"><a href="/singlepost/{{c3.blog_id}}">{{c3.title}}</a></h2>
+                  <span class="author mb-3 d-block">{{c3.author}}</span>
+                  <p class="mb-4 d-block">{{c3.blog_desc}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            {% for cpost in culture_post %}
+            <div class="post-entry-1 border-bottom">
+              <div class="post-meta"><span class="date">{{cpost.cat}}</span> <span class="mx-1">&bullet;</span> <span>{{cpost.date}}</span></div>
+              <h2 class="mb-2"><a href="/singlepost/{{cpost.blog_id}}">{{cpost.title}}</a></h2>
+              <span class="author mb-3 d-block">{{cpost.author}}</span>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </section><!-- End Culture Category Section -->
+
+    <!-- ======= Business Category Section ======= -->
+    <section class="category-section">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header d-flex justify-content-between align-items-center mb-5">
+          <h2>Business</h2>
+          <div><a href="/category/1" class="more">See All Business</a></div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-9 order-md-2">
+
+            <div class="d-lg-flex post-entry-2">
+              <a href="/singlepost/{{b1.blog_id}}" class="me-4 thumbnail d-inline-block mb-4 mb-lg-0">
+                <img src="/media/{{b1.blog_img}}" alt="" class="img-fluid" style="width: 616px;height: 390px;">
+              </a>
+              <div>
+                <div class="post-meta"><span class="date">{{b1.cat}}</span> <span class="mx-1">&bullet;</span> <span>{{b1.date}}</span></div>
+                <h3><a href="/singlepost/{{b1.blog_id}}">{{b1.title}}</a></h3>
+                <p>{{b1.blog_desc}}</p>
+                <div class="d-flex align-items-center author">
+                  <div class="photo"><img src="static/assets/img/person-4.jpg" alt="" class="img-fluid"></div>
+                  <div class="name">
+                    <h3 class="m-0 p-0">{{b1.author}}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-4">
+                
+                <div class="post-entry-1 border-bottom">
+                  <a href="/singlepost/{{b3.blog_id}}"><img src="/media/{{b3.blog_img}}" alt="" class="img-fluid"></a>
+                  <div class="post-meta"><span class="date">{{b3.cat}}</span> <span class="mx-1">&bullet;</span> <span>{{b3.date}}</span></div>
+                  <h2 class="mb-2"><a href="/singlepost/{{b3.blog_id}}">{{b3.title}}</a></h2>
+                  <span class="author mb-3 d-block">{{b3.author}}</span>
+                  <p class="mb-4 d-block">{{b3.desc}}</p>
+                </div>
+
+                <div class="post-entry-1">
+                  <div class="post-meta"><span class="date">Business</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+                  <h2 class="mb-2"><a href="single-post.html">5 Great Startup Tips for Female Founders</a></h2>
+                  <span class="author mb-3 d-block">Jenny Wilson</span>
+                </div>
+              </div>
+              <div class="col-lg-8">
+
+                <div class="post-entry-1">
+                  <a href="/singlepost/{{b2.blog_id}}"><img src="/media/{{b2.blog_img}}" alt="" class="img-fluid"style="width: 624px;height: 395px;"></a>
+                  <div class="post-meta"><span class="date">{{b2.cat}}</span> <span class="mx-1">&bullet;</span> <span>{{b2.date}}</span></div>
+                  <h2 class="mb-2"><a href="/singlepost/{{b2.blog_id}}">{{b2.title}}</a></h2>
+                  <span class="author mb-3 d-block">{{b2.author}}</span>
+                  <p class="mb-4 d-block">{{b2.blog_desc}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            {% for bus in business %}
+            <div class="post-entry-1 border-bottom">
+              <div class="post-meta"><span class="date">{{bus.cat}}</span> <span class="mx-1">&bullet;</span> <span>{{bus.date}}</span></div>
+              <h2 class="mb-2"><a href="single-post.html">{{bus.title}}</a></h2>
+              <span class="author mb-3 d-block">{{bus.author}}</span>
+            </div>
+            {% endfor %}
+            
+          </div>
+        </div>
+      </div>
+    </section><!-- End Business Category Section -->
+
+  <!-- ======= Lifestyle Category Section ======= -->
+  <section class="category-section">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-header d-flex justify-content-between align-items-center mb-5">
+        <h2>Lifestyle</h2>
+        <div><a href="/category/5" class="more">See All Lifestyle</a></div>
+      </div>
+
+      <div class="row g-5">
+        <div class="col-lg-4">
+
+          <div class="post-entry-1 lg">
+            <a href="/singlepost/{{l2.blog_id}}"><img src="/media/{{l2.blog_img}}" alt="" class="img-fluid"></a>
+            <div class="post-meta"><span class="date">{{l2.cat}}</span> <span class="mx-1">&bullet;</span> <span>{{l2.date}}</span></div>
+            <h2><a href="/singlepost/{{l2.blog_id}}">{{l2.title}}</a></h2>
+            <p class="mb-4 d-block">{{l2.blog_desc}}</p>
+
+            <div class="d-flex align-items-center author">
+              <div class="photo"><img src="static/assets/img/person-7.jpg" alt="" class="img-fluid"></div>
+              <div class="name">
+                <h3 class="m-0 p-0">{{l2.author}}</h3>
+              </div>
+            </div>
+          </div>
+
+          {% comment %} <div class="post-entry-1 border-bottom">
+            <div class="post-meta"><span class="date">Lifestyle</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+            <h2 class="mb-2"><a href="single-post.html">The Best Homemade Masks for Face (keep the Pimples Away)</a></h2>
+            <span class="author mb-3 d-block">Jenny Wilson</span>
+          </div>
+
+          <div class="post-entry-1">
+            <div class="post-meta"><span class="date">Lifestyle</span> <span class="mx-1">&bullet;</span> <span>Jul 5th '22</span></div>
+            <h2 class="mb-2"><a href="single-post.html">10 Life-Changing Hacks Every Working Mom Should Know</a></h2>
+            <span class="author mb-3 d-block">Jenny Wilson</span>
+          </div> {% endcomment %}
+
+        </div>
+
+        <div class="col-lg-8">
+          <div class="row g-5">
+            <div class="col-lg-4 border-start custom-border">
+              <div class="post-entry-1">
+                <a href="/singlepost/{{l1.blog_id}}"><img src="/media/{{l1.blog_img}}" alt="" class="img-fluid"></a>
+                <div class="post-meta"><span class="date">{{l1.cat}}</span> <span class="mx-1">&bullet;</span> <span>{{l1.date}}</span></div>
+                <h2><a href="/singlepost/{{l1.blog_id}}">{{l1.title}}</a></h2>
+              </div>
+              <div class="post-entry-1">
+                <a href="/singlepost/{{l6.blog_id}}"><img src="/media/{{l6.blog_img}}" alt="" class="img-fluid"></a>
+                <div class="post-meta"><span class="date">{{l6.cat}}</span> <span class="mx-1">&bullet;</span> <span>{{l6.date}}</span></div>
+                <h2><a href="/singlepost/{{l6.blog_id}}">{{l6.title}}</a></h2>
+              </div>
+            </div>
+
+            <div class="col-lg-4 border-start custom-border">
+              <div class="post-entry-1">
+                <a href="/singlepost/{{l4.blog_id}}"><img src="/media/{{l4.blog_img}}" alt="" class="img-fluid"></a>
+                <div class="post-meta"><span class="date">{{l4.cat}}</span> <span class="mx-1">&bullet;</span> <span>{{l4.date}}</span></div>
+                <h2><a href="/singlepost/{{l4.blog_id}}">{{l4.title}}</a></h2>
+              </div>
+              <div class="post-entry-1">
+                <a href="/singlepost/{{l5.blog_id}}"><img src="/media/{{l5.blog_img}}" alt="" class="img-fluid"></a>
+                <div class="post-meta"><span class="date">{{l5.cat}}</span> <span class="mx-1">&bullet;</span> <span>{{l5.date}}</span></div>
+                <h2><a href="/singlepost/{{l5.blog_id}}">{{l5.title}}</a></h2>
+              </div>
+            </div>
+
+
+            
+            <div class="col-lg-4">
+              {% for lf in lifestyle %}
+              <div class="post-entry-1 border-bottom">
+                <div class="post-meta"><span class="date">{{lf.cat}}</span> <span class="mx-1">&bullet;</span> <span>{{lf.date</span></div>
+                <h2 class="mb-2"><a href="/singlepost/{{lf.blog_id}}">{{lf.title}}</a></h2>
+                <span class="author mb-3 d-block">{{lf.author}}</span>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+      </div> <!-- End .row -->
+    </div>
+  </section><!-- End Lifestyle Category Section -->
+
+  </main><!-- End #main -->
+
+  {% endblock body %}
+ 
+ 

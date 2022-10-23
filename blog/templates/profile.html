@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+
+{% endblock css %}
+
+
+{% block body %}
+
+<!-- <div class="card-body p-md-5" style="
+margin-top: 37px;
+">
+  <div class="row justify-content-center">
+    <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+      <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Profile</p>
+
+      <form action="{% url 'Login' %}" method="post" class="mx-1 mx-md-4">
+          {% csrf_token %}
+        <div class="d-flex flex-row align-items-center mb-4">
+
+          <div class="form-outline flex-fill mb-0">
+            <input type="name" id="name" class="form-control" name="name" placeholder="Name">
+          </div>
+        </div>
+        <div class="d-flex flex-row align-items-center mb-4">
+          <div class="form-outline flex-fill mb-0">
+            <input type="number" id="phone" class="form-control" name="phone" placeholder="Phone">
+          </div>
+        </div>
+        <div class="d-flex flex-row align-items-center mb-4">
+          <div class="form-outline flex-fill mb-0">
+            <input type="username" id="username" class="form-control" name="username" placeholder="Username">
+          </div>
+        </div>
+
+        <div class="d-flex flex-row align-items-center mb-4">
+          <div class="form-outline flex-fill mb-0">
+            <input type="password" id="password" class="form-control" name="pass1" placeholder="Password">
+          </div>
+        </div>
+
+        <div class="d-flex flex-row align-items-center mb-4">
+          <div class="form-outline flex-fill mb-0">
+            <input type="password" id="password" class="form-control" name="pass2" placeholder=" Confirm Password">
+          </div>
+        </div>
+        
+        <div class="d-flex flex-row align-items-center mb-4">
+          <div class="form-outline flex-fill mb-0">
+            <input type="image" src="" alt="Submit" width="48" height="48">
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+    <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+      <img src="static/assets/img/login1.jpg" class="img-fluid" alt="Sample image" style="width: 768px;height: 429px;">
+
+    </div>
+  </div>
+</div> -->
+
+<div class="container rounded bg-white mt-5 mb-5">
+  <div class="row">
+      <div class="col-md-3 border-right">
+        
+          <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="static/assets/img/user.jpg" alt="NO Image Found"><span class="font-weight-bold"></span><span class="text-black-50"></span><span> </span></div>
+          
+      </div>
+      <div class="col-md-5 border-right">
+        
+        <form action="{% url 'profile' %}" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="p-3 py-5">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                  <h4 class="text-right">Profile Details</h4>
+              </div> 
+              <div class="row mt-2">
+                  <div class="col-md-6"><label class="labels"> Name</label>
+                    <input type="text" name="first_name" class="form-control" placeholder="first name" ></div>
+                  <div class="col-md-6"><label class="labels">Surname</label>
+                    <input type="text" name="last_name" class="form-control"  placeholder="surname">
+                  </div>
+              </div>
+              <div class="row mt-3">
+                  <div class="col-md-12"><label class="labels">Mobile Number</label>
+                    <input type="text" class="form-control" placeholder="enter phone number" name="mobile_no" ></div>
+
+                  <div class="col-md-12"><label class="labels">Username</label>
+                    <input type="text"name="username" class="form-control" value="{{user.username}}"readonly="readonly"></div>
+
+                  <div class="col-md-12"><label class="labels">Email ID</label>
+                    <input type="text" name="email" class="form-control" placeholder="enter email id"></div>
+
+                  <div class="col-md-12"><label class="labels">Profile Image</label>
+                    <input type="file" name="profile_image" class="form-control" id="profile_image"></div>
+
+              </div>
+              <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Save Profile</button></div>
+          </div>
+        </form>
+      </div>
+      {% comment %} <div class="col-md-4">
+          <div class="p-3 py-5">
+              <div class="d-flex justify-content-between align-items-center experience"><span>Your Favorites</span></div><br>
+              <div class="col-md-12"><label class="labels">Categories</label><input type="text" class="form-control" placeholder="Categories" value=""></div> <br>
+              <div class="col-md-12"><label class="labels">Tags</label><input type="text" class="form-control" placeholder="tags" value=""></div>
+              <br>
+              <div class="mt-5 text-center"><button class="btn btn-secondary profile-button" type="button">Update Changes</button></div>
+          
+          </div>
+      </div> {% endcomment %}
+  </div>
+</div>
+
+
+{% endblock body %}

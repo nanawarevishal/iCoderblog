@@ -1,0 +1,204 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+
+.img1 {
+  max-width: 100%;
+  height: auto;
+  width: 874px;
+}
+
+{% endblock css %}
+
+
+{% block body %}
+{% load static %}
+
+  <main id="main">
+
+    <section class="single-post-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9 post-content" data-aos="fade-up">
+
+            <!-- ======= Single Post Content ======= -->
+            <!-- {% for post in blogpost %} -->
+            <div class="single-post">
+              <div class="post-meta"><span class="date">{{post.cat}}</span> <span class="mx-1">&bullet;</span> <span>{{post.date}}</span><span class="mx-1">&bullet; Views({{post.views}})</span></div>
+              <h1 class="mb-5">{{post.title}}</h1>
+              {{post.blog_info|safe}}
+
+              <figure class="my-4">
+                {% comment %} <img src="/media/{{post.blog_img}}" alt="" class="img1"style="width: 764px;margin-left: 86px;"> {% endcomment %}
+              </figure>
+             
+            </div><!-- End Single Post Content -->
+            <!-- {% endfor %} -->
+
+            <!-- ======= Comments ======= -->
+            <div class="comments">
+              <h5 class="comment-title py-4">{{comments.count}} Comments</h5>
+              {% for comment in comments %}
+              <div class="comment d-flex mb-4">
+                <div class="flex-shrink-0">
+                  <div class="avatar avatar-sm rounded-circle">
+                    <img class="avatar-img" src="static/assets/img/person-1.jpg" alt="" class="img-fluid">
+                  </div>
+                </div>
+                <div class="flex-grow-1 ms-2 ms-sm-3">
+                  <div class="comment-meta d-flex align-items-baseline">
+                    <h6 class="me-2">{{user.username}}</h6>
+                    <span class="text-muted">{{comment.timestamp}}</span>
+                  </div>
+                  <div class="comment-body">
+                    {{comment.comment}}
+                  </div>
+                </div>
+                
+                 
+              
+              </div>
+
+              {% endfor %}
+  
+            </div><!-- End Comments -->
+
+            <!-- ======= Comments Form ======= -->
+            <div class="row justify-content-center mt-5">
+
+              <div class="col-lg-12">
+                <h5 class="comment-title">Leave a Comment</h5>
+                <form action="{% url 'postComment' %}" method="POST">
+                {% csrf_token %}
+                <div class="row">
+                  <div class="col-lg-6 mb-3">
+                    <label for="comment-name">Name</label>
+                    <input type="text" class="form-control" id="comment-name" placeholder="{{user.username}}">
+                  </div>
+                  <div class="col-lg-6 mb-3">
+                    <label for="comment-email">Email</label>
+                    <input type="text" class="form-control" id="comment-email" placeholder="Enter your email">
+                  </div>
+                  <div class="col-12 mb-3">
+                    <label for="comment-message">Message</label>
+                     {% for post in blogpost %} 
+                    <input type="hidden" name="postSno" value="{{post.blog_id}}">
+                    {% endfor %}
+                    <input type="hidden" name="parentSno" value="">
+                    <textarea class="form-control"name="comment" id="comment-message" placeholder="Enter your name" cols="30" rows="10"></textarea>
+                  </div>
+                  <div class="col-12">
+                    <input type="submit" class="btn btn-primary" value="Post comment">
+                  </div>
+                </div>
+              </form>
+              </div>
+            </div><!-- End Comments Form -->
+
+          </div>
+          <div class="col-md-3">
+            <!-- ======= Sidebar ======= -->
+            <div class="aside-block">
+
+              <ul class="nav nav-pills custom-tab-nav mb-4" id="pills-tab" role="tablist">
+               
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="pills-trending-tab" data-bs-toggle="pill" data-bs-target="#pills-trending" type="button" role="tab" aria-controls="pills-trending" aria-selected="true">Trending</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-latest-tab" data-bs-toggle="pill" data-bs-target="#pills-latest" type="button" role="tab" aria-controls="pills-latest" aria-selected="false">Latest</button>
+                </li>
+              </ul>
+
+              <div class="tab-content" id="pills-tabContent">
+
+                <!-- Trending -->
+                <div class="tab-pane fade show active" id="pills-trending" role="tabpanel" aria-labelledby="pills-trending-tab">
+                  {% for trend in trendings %}
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">{{trend.cat}}</span> <span class="mx-1">&bullet;</span> <span>{{trend.date}}</span></div>
+                    <h2 class="mb-2"><a href="#">{{trend.title}}</a></h2>
+                    <span class="author mb-3 d-block">{{trend.author}}</span>
+                  </div>
+                  {% endfor %}
+
+                  <div class="aside-block">
+                    <h3 class="aside-title">Video</h3>
+                    <div class="video-post">
+                      <a href="https://www.youtube.com/watch?v=AiFfDjmd0jU" class="glightbox link-video">
+                        <span class="bi-play-fill"></span>
+                        <img src="static/assets/img/post-landscape-5.jpg" alt="" class="img-fluid">
+                      </a>
+                    </div>
+                  </div><!-- End Video -->
+      
+                  <div class="aside-block">
+                    <h3 class="aside-title">Categories</h3>
+                    <ul class="aside-links list-unstyled">
+                      {% for post in catName %}
+                      <li><a href="/category/{{post.cat_id}}"><i class="bi bi-chevron-right"></i>{{post.cat_name}}</a></li>
+                      {% endfor %}
+                    </ul>
+                  </div><!-- End Categories -->
+      
+                  <div class="aside-block">
+                    <h3 class="aside-title">Tags</h3>
+                    <ul class="aside-tags list-unstyled">
+                      {% for tag in blogtag%}
+                      <li><a href="/category/{{tag.tags}}">{{tag.tags}}</a></li>
+                      {% endfor %}
+                    </ul>
+                  </div><!-- End Tags -->
+      
+                </div> <!-- End Trending -->
+
+                <!-- Latest -->
+                <div class="tab-pane fade" id="pills-latest" role="tabpanel" aria-labelledby="pills-latest-tab">
+                  {% for lst in latest %}
+                  <div class="post-entry-1 border-bottom">
+                    <div class="post-meta"><span class="date">{{lst.cat}}</span> <span class="mx-1">&bullet;</span> <span>{{lst.date}}</span></div>
+                    <h2 class="mb-2"><a href="#">{{lst.title}}</a></h2>
+                    <span class="author mb-3 d-block">{{lst.author}}</span>
+                    <hr>
+                    {% endfor %}
+                  </div>
+                </div> 
+              </div>
+            </div>
+
+            <div class="aside-block">
+              <h3 class="aside-title">Video</h3>
+              <div class="video-post">
+                <a href="https://www.youtube.com/watch?v=AiFfDjmd0jU" class="glightbox link-video">
+                  <span class="bi-play-fill"></span>
+                  <img src="static/assets/img/post-landscape-5.jpg" alt="" class="img-fluid">
+                </a>
+              </div>
+            </div><!-- End Video -->
+
+            <div class="aside-block">
+              <h3 class="aside-title">Categories</h3>
+              <ul class="aside-links list-unstyled">
+                {% for post in catName %}
+                <li><a href="/category/{{post.cat_id}}"><i class="bi bi-chevron-right"></i>{{post.cat_name}}</a></li>
+                {% endfor %}
+              </ul>
+            </div><!-- End Categories -->
+
+            {% comment %} <div class="aside-block">
+              <h3 class="aside-title">Tags</h3>
+              <ul class="aside-tags list-unstyled">
+                {% for tag in blogtag %}
+                <li><a href="/category/{{tag.tags}}">{{tag.tags}}</a></li>
+                {% endfor %}
+              </ul>
+            </div><!-- End Tags --> {% endcomment %}
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main><!-- End #main -->
+
+ {% endblock body %}
