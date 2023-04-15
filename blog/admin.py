@@ -15,6 +15,10 @@ class BlogAdmin(admin.ModelAdmin):
     class Media:
         js= ('tinyInject.js',)
         
+        
+        #wrong code and wrong blog
+        #please check again
+        
 
 
 
